@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Player {
     private final String mFirstName;
-    private String mTarget;
+    private Player mTarget;
 
     public Player(String firstName) {
         mFirstName = firstName;
@@ -14,11 +14,11 @@ public class Player {
         return mFirstName;
     }
 
-    public String getTarget() {
+    public Player getTarget() {
         return mTarget;
     }
 
-    public void setTarget(String target) {
+    public void setTarget(Player target) {
         mTarget = target;
     }
 }
