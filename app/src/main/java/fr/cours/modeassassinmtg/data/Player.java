@@ -1,6 +1,4 @@
-package fr.cours.modeassassinmtg.model;
-
-import java.util.List;
+package fr.cours.modeassassinmtg.data;
 
 public class Player {
     private final String mFirstName;

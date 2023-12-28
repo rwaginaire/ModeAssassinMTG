@@ -1,4 +1,4 @@
-package fr.cours.modeassassinmtg.model;
+package fr.cours.modeassassinmtg.data;
 
 import java.util.ArrayList;
 import java.util.Collections;
