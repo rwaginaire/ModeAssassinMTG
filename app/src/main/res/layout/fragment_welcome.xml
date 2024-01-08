@@ -30,11 +30,20 @@
         android:text="Ajouter"
         android:textAllCaps="false" />
 
-    <!--list view to display list of languages-->
     <ListView
         android:id="@+id/idLVPlayers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idEdtItemName" />
+
+    <Button
+        android:id="@+id/idBtnTirage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="C'est parti !"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
