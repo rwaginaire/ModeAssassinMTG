@@ -1,5 +1,7 @@
 package fr.cours.modeassassinmtg.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ public class WelcomeFragment extends Fragment {
     private FragmentWelcomeBinding binding;
     private ListView playerLV;
     private Button addBtn;
+    private Button tirageBtn;
     private EditText itemEdt;
     private static ArrayList<String> playerList;
     private static ListViewAdapter adapter;
@@ -62,6 +65,7 @@ public class WelcomeFragment extends Fragment {
         playerLV = binding.idLVPlayers;
         addBtn = binding.idBtnAdd;
         itemEdt = binding.idEdtItemName;
+        tirageBtn = binding.idBtnTirage;
         playerList = new ArrayList<>();
 
         // on the below line we are initializing the adapter for our list view.
@@ -91,6 +95,27 @@ public class WelcomeFragment extends Fragment {
 
                 // clear edit text content
                 itemEdt.getText().clear();
+            }
+        });
+
+        tirageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int playersCount = adapter.getCount();
+                if (playersCount < 3) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Nombre de joueurs insuffisant !");
+                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                else {
+                    // TODO lancer tirage
+                }
             }
         });
     }
