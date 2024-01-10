@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import fr.cours.modeassassinmtg.R;
 import fr.cours.modeassassinmtg.custom.ListViewAdapter;
 import fr.cours.modeassassinmtg.databinding.FragmentWelcomeBinding;
 
@@ -115,6 +118,13 @@ public class WelcomeFragment extends Fragment {
                 }
                 else {
                     // TODO lancer tirage
+                    FragmentManager fragmentManager = getParentFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.setReorderingAllowed(true);
+                    DrawFragment drawFragment = DrawFragment.newInstance();
+                    fragmentTransaction.replace(R.id.fragment_container_view, drawFragment, null);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
                 }
             }
         });
